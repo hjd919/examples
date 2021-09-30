@@ -1,0 +1,15 @@
+version: "3.5"
+
+# 定义services
+services:  
+  consul1:
+    image: consul:1.9.0
+    container_name: consul1
+    # command: agent -server -bootstrap-expect=1 -node=consul1 -bind=0.0.0.0 -client=0.0.0.0 -datacenter=dc1
+    ports:
+      - 8500:8500
+    volumes:
+      - consul_data1:/consul/data
+
+volumes:
+  consul_data1:
